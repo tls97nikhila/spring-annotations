@@ -1,6 +1,7 @@
 package com.stackroute;
 
 import com.stackroute.Demo.BeanLifeCycle;
+import com.stackroute.Demo.BeanPostProcessorDemoBean;
 import com.stackroute.Domain.Actor;
 import com.stackroute.Domain.Movie;
 import org.springframework.context.annotation.Bean;
@@ -26,5 +27,10 @@ public class BeanConfig {
     @Bean(initMethod="customInit", destroyMethod="customDestroy")
     public BeanLifeCycle getMyFileSystemBean() {
         return new BeanLifeCycle();
+    }
+
+    @Bean
+    public BeanPostProcessorDemoBean getBean(){
+        return new BeanPostProcessorDemoBean();
     }
 }
